@@ -25,5 +25,6 @@ public class AnimeController {
     public List<Anime> list() {
         log.info(dateUtil.formatLocalDateTimeToDatabaseStyle(LocalDateTime.now()));
         return animeService.listAll();
+        
     }
 }
