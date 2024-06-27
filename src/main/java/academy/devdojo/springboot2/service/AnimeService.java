@@ -46,6 +46,5 @@ public class AnimeService {
         Anime anime = AnimeMapper.INSTANCE.toAnime(animePutRequestBody);
         anime.setId(savedAnime.getId());
         animeRepository.save(anime);
-
     }
 }
