@@ -24,5 +24,10 @@ public class SpringClient {
                 new ParameterizedTypeReference<>() {
                 });
         log.info(exchange);
+
+        Anime kingdom = Anime.builder().name("kingom").build();
+        Anime kingdomSaved = new RestTemplate().postForObject("http://localhost:8080/animes/", kingdom, Anime.class);
+        log.info("anime saved {}", kingdomSaved);
+        
     }
 }
