@@ -24,6 +24,10 @@ public class AnimeService {
         return animeRepository.findAll(pageable);
     }
 
+    public List<Anime> listAllNoPageble() {
+        return animeRepository.findAll();
+    }
+
     public List<Anime> fidByName(String name) {
         return animeRepository.findByName(name);
     }
