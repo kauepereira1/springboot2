@@ -5,17 +5,17 @@ import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.test.autoconfigure.data.jdbc.DataJdbcTest;
+import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
 
-@DataJdbcTest
-@DisplayName("Test for Anime Repository")
+@DataJpaTest
+@DisplayName("Tests for Anime Repository")
 class AnimeRepositoryTest {
     @Autowired
     private AnimeRepository animeRepository;
 
     @Test
-    @DisplayName("Save creates anime when Successfull")
-    void save_Persistir_QuandoForSucesso() {
+    @DisplayName("Save creates anime when Successful")
+    void save_PersistAnime_WhenSuccessful(){
         Anime animeToBeSaved = createAnime();
         Anime animeSaved = this.animeRepository.save(animeToBeSaved);
         Assertions.assertThat(animeSaved).isNotNull();
@@ -24,7 +24,7 @@ class AnimeRepositoryTest {
 
     }
 
-    private Anime createAnime() {
+    private Anime createAnime(){
         return Anime.builder()
                 .name("Hajime no Ippo")
                 .build();
